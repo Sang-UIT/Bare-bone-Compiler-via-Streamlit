@@ -1,4 +1,4 @@
-networkx==3.1
+networkx
 pyvis
 json
 streamlit
