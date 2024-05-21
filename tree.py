@@ -27,5 +27,4 @@ def visualize_tree(instructions):
 
 def display_tree(instructions):
     net = visualize_tree(instructions)
-    net.show("tree.html")
-    return "tree.html"
+    return net.generate_html()

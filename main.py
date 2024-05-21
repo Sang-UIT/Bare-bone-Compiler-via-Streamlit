@@ -30,9 +30,7 @@ if run:
             for error in parser.get_errors():
                 st.error(f"Error at line {error[0]}: {error[1]}")
         else:
-            tree_html = tree.display_tree(instr)
-            with open(tree_html, 'r') as f:
-                html_code = f.read()
+            html_code = tree.display_tree(instr)
             st.components.v1.html(html_code, height=600)
             compiler = BareBoneCompiler(instr)
             result = compiler.execute()
