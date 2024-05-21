@@ -3,6 +3,7 @@ from parser import BareBoneParser
 from execute import BareBoneCompiler
 import tree
 import json
+import streamlit.components.v1 as components
 def wide_space_default():
     st.set_page_config(layout='wide')
 wide_space_default()
@@ -31,7 +32,7 @@ if run:
                 st.error(f"Error at line {error[0]}: {error[1]}")
         else:
             html_code = tree.display_tree(instr)
-            st.components.v1.html(html_code, height=600)
+            components(html_code, height=600)
             compiler = BareBoneCompiler(instr)
             result = compiler.execute()
             
