@@ -32,7 +32,7 @@ if run:
                 st.error(f"Error at line {error[0]}: {error[1]}")
         else:
             html_code = tree.display_tree(instr)
-            components(html_code, height=600)
+            components.html(html_code, height=600)
             compiler = BareBoneCompiler(instr)
             result = compiler.execute()
             
