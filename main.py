@@ -26,7 +26,6 @@ if run:
     else:
         parser = BareBoneParser()
         instr = parser.parse(text_input)
-
         if parser.get_errors():
             for error in parser.get_errors():
                 st.error(f"Error at line {error[0]}: {error[1]}")
@@ -34,6 +33,7 @@ if run:
             html_code = tree.display_tree(instr)
             components.html(html_code, height=600)
             compiler = BareBoneCompiler(instr)
+            st.write(instr)
             result = compiler.execute()
             
 with col2:
